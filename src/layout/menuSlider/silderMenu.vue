@@ -15,18 +15,18 @@
                     <el-submenu :index="subMenu.name+subMenuIndex" v-if="subMenu.hasOwnProperty('children')&&subMenu.children.length>0">
                         <span slot="title">
                             <i :class="subMenu.meta.icon"></i>
-                            <span>{{subMenu.name}}</span>
+                            <span>{{subMenu.meta.title}}</span>
                         </span>
                         <el-menu-item-group>
                             <el-menu-item :index="childMenu.path" v-for="(childMenu, childMenuIndex) in subMenu.children" :key="childMenu+childMenuIndex" @click="goto(subMenu,childMenu)">
-                                <span slot="title">{{childMenu.name}}</span>
+                                <span slot="title">{{childMenu.meta.title}}</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-menu-item :index="subMenu.path" v-else @click="goto(subMenu)">
                         <i :class="subMenu.meta.icon"></i>
                         <span slot="title">
-                            <span>{{subMenu.name}}</span>
+                            <span>{{subMenu.meta.title}}</span>
                         </span>
                     </el-menu-item>
                 </div>

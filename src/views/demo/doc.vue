@@ -83,35 +83,58 @@
     </div>
     <h2>疑惑</h2>
     <el-collapse>
-      <el-collapse-item title="Object.freeze()" name="1">
+      <el-collapse-item title="前后端分离问题" name="1">
         <div>
-          与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；
-        </div>
-        <div>
-          在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="反馈 Feedback" name="2">
-        <div>
-          控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；
-        </div>
-        <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
-      </el-collapse-item>
-      <el-collapse-item title="效率 Efficiency" name="3">
-        <div>简化流程：设计简洁直观的操作流程；</div>
-        <div>
-          清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；
-        </div>
-        <div>
-          帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。
+          1、该网站前端变化远比后端变化频繁 <br />
+          2、该网站尚处于原始开发模式，数据逻辑与表现逻辑混杂不清<br />
+          3、该网站前端团队和后端团队分属两个领导班子，技能点差异很大<br />
+          4、该网站前端效果绚丽/跨设备兼容要求高<br /><br />
+          这些建议是很有意义的分工
+          前端只需要关注页面的样式与动态数据的解析&渲染，而后端专注于具体业务逻辑。
         </div>
       </el-collapse-item>
-      <el-collapse-item title="可控 Controllability" name="4">
+      <el-collapse-item title="打包工具" name="2">
+        <div>gulp打包，jq+boostrap+gulp</div>
+        <p>
+          通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs
+          模块、AMD 模块、ES6 模块、CSS、图片等。
+          它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+          还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。它定位是模块打包器，而
+          Gulp/Grunt 属于构建工具 立即调用函数表达式(IIFE)
+        </p>
+      </el-collapse-item>
+      <el-collapse-item title="跨域" name="3">
         <div>
-          用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；
+          现象一: No 'Access-Control-Allow-Origin' header is present on the
+          requested resource,并且The response had HTTP status code 404
         </div>
+        解决方案: 后端允许options请求。
+        <br />
+        <p>
+          现象二：No 'Access-Control-Allow-Origin' header is present on the requested resource, 并且The response had HTTP status code 405
+          后端关闭对应的安全配置。
+        </p>
+        <br>
+        现象三: No 'Access-Control-Allow-Origin' header is present on the requested resource,并且status 200
+        <p>
+        解决方案: 后端增加对应的头部支持。
+        </p>
+        <br>
+        现象四: heade contains multiple values '*,*'
+        解决方案（一一对应）: 建议删除代码中手动添加的*，只用项目配置中的即可；
+      </el-collapse-item>
+      <el-collapse-item title="src---herf" name="4">
         <div>
-          结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。
+          它们之间的主要区别可以用这样一句话来概括：src用于替代这个元素，而href用于建立这个标签与外部资源之间的关系。
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="页面请求数据放在哪个生命周期里" name="5">
+        <div>
+          单纯请求数据，created,需要页面元素加载完成，就mounted
+          对于作为子组件被调用的组件里，异步请求应当在mounted里调用，因为这个时候子组件可能需要涉及到对dom的操作；
+          对于页面级组件，当我们需要使用ssr（服务端渲染）的时候，只有created是可用的，所以这个时候请求数据只能用它；
+          对于页面级组件， 当我们做异步操作时，涉及到要访问dom的操作，我们仍旧只能使用mounted;
+          对于一般情况，created和mounted都是可以的；
         </div>
       </el-collapse-item>
     </el-collapse>

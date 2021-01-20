@@ -1,37 +1,14 @@
 <template>
   <div>
-12412
+    思想先行，代码后动
+
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      dialogVisible: true,
-      tableData: [
-        {
-          check: true,
-          date: '1',
-          name: '王小虎',
-          address: '上海市普陀区金海市普陀区金沙江路 1518 弄海市普陀区金沙江路 1518 弄海市普陀区金沙江路 1518 弄海市普陀区金沙江路 1518 弄沙江路 1518 弄'
-        },
-        {
-          check: false,
-          date: '2',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },
-        {
-          date: '3',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },
-        {
-          date: '4',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }
-      ]
+      dialogVisible: true
     }
   },
   methods: {

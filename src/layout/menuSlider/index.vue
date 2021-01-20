@@ -21,6 +21,7 @@
           </template>
           <el-menu-item index="/doc">文档</el-menu-item>
           <el-menu-item index="/unit">组件</el-menu-item>
+          <el-menu-item index="/unit">样式</el-menu-item>
         </el-submenu>
       </div>
     </el-scrollbar>

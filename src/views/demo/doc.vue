@@ -1,5 +1,38 @@
 <template>
   <div>
+    <h2>架构理解</h2>
+    <b>
+      如果让你来制作一个访问量很高的大型网站，你会如何来管理所有css、js文件、图片？
+    </b>
+    <el-divider></el-divider>
+    <div>
+      （1）遵循自定的一套CSS，JS和图片文件和文件夹命名规范 <br />
+      （2）依托采用的前端工程化工具，依照工具脚手架规范 (gulp, webpack,
+      grunt,yeoman)<br />
+      （3）依据采用的框架规范（Vue, React, jQuery）
+    </div>
+    <br />
+    <br />
+    <b> 在选择框架的时候要从哪方面入手 </b>
+    <el-divider></el-divider>
+    <div>
+      影响团队技术选型有很多因素，如技术组成， 新技术，新框架，语言及发布等。
+      为了更好的考量不同的因素， 需要列出重要的象限，如开发效率
+      团队喜好，依次来决定哪个框架更适合当前的团队和项目。
+      上线时间影响框架选择，不要盲目替换现有框架。 jq+boostrap,easyUI+jq
+      Angular,ionic React,Vue
+    </div>
+    <br />
+    <br />
+    <b> 对Node的优点和缺点提出了自己的看法？ </b>
+    <el-divider></el-divider>
+    <div>
+      *（优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求，
+      因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。
+      此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，
+      因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。
+    </div>
+
     <h2>Vue与React区别</h2>
     <div class="doc_block">
       React和vue有许多相似之处，它们都有
@@ -28,7 +61,6 @@
     <h2>运行时性能</h2>
     <div class="doc_block">
       优化
-
       <p>
         在 React
         应用中，当某个组件的状态发生变化时，它会以该组件为根，重新渲染整个组件子树。
@@ -45,44 +77,30 @@
       </p>
     </div>
 
-    <h2>HTML & CSS</h2>
-    <div class="doc_block">
-      <p>
-        在 React 中，一切都是 JavaScript。不仅仅是 HTML 可以用 JSX
-        来表达，现在的潮流也越来越多地将 CSS 也纳入到 JavaScript
-        中来处理。这类方案有其优点，但也存在一些不是每个开发者都能接受的取舍。
-        Vue 的整体思想是拥抱经典的 Web
-        技术，并在其上进行扩展。我们下面会详细分析一下。 JSX vs Templates 在
-        React 中，所有的组件的渲染功能都依靠 JSX。JSX 是使用 XML 语法编写
-        JavaScript 的一种语法糖。 使用 JSX 的渲染函数有下面这些优势：
-        你可以使用完整的编程语言 JavaScript
-        功能来构建你的视图页面。比如你可以使用临时变量、JS
-        自带的流程控制、以及直接引用当前 JS 作用域中的值等等。 开发工具对 JSX
-        的支持相比于现有可用的其他 Vue 模板还是比较先进的
-        (比如，linting、类型检查、编辑器的自动完成)。 事实上 Vue
-        也提供了渲染函数，甚至支持
-        JSX。然而，我们默认推荐的还是模板。任何合乎规范的 HTML 都是合法的 Vue
-        模板，这也带来了一些特有的优势： 对于很多习惯了 HTML
-        的开发者来说，模板比起 JSX
-        读写起来更自然。这里当然有主观偏好的成分，但如果这种区别会导致开发效率的提升，那么它就有客观的价值存在。
-        基于 HTML 的模板使得将已有的应用逐步迁移到 Vue 更为容易。
-        这也使得设计师和新人开发者更容易理解和参与到项目中。
-        你甚至可以使用其他模板预处理器，比如 Pug 来书写 Vue 的模板。
-        有些开发者认为模板意味着需要学习额外的 DSL (Domain-Specific Language
-        领域特定语言) 才能进行开发——我们认为这种区别是比较肤浅的。首先，JSX
-        并不是没有学习成本的——它是基于 JS 之上的一套额外语法。同时，正如同熟悉
-        JS 的人学习 JSX 会很容易一样，熟悉 HTML 的人学习 Vue
-        的模板语法也是很容易的。最后，DSL
-        的存在使得我们可以让开发者用更少的代码做更多的事，比如 v-on
-        的各种修饰符，在 JSX 中实现对应的功能会需要多得多的代码。
-        更抽象一点来看，我们可以把组件区分为两类：一类是偏视图表现的
-        (presentational)，一类则是偏逻辑的
-        (logical)。我们推荐在前者中使用模板，在后者中使用 JSX
-        或渲染函数。这两类组件的比例会根据应用类型的不同有所变化，但整体来说我们发现表现类的组件远远多于逻辑类组件。
-      </p>
-    </div>
     <h2>疑惑</h2>
     <el-collapse>
+      <el-collapse-item title="webpack" name="101">
+        <div>
+          require everything, bundle everything，要什么绑什么。
+          从而处理文件的模块依赖与内容转化，为项目预编译模块化提供工具支持。
+          功能集成度高 功能完善，持续更新吸收别的项目的优点
+          社区活跃，生态链强，便于学习和团队项目中使用
+          代码转换，typeScript转换，scss,less，stylus编译css
+          文件优化，js,css，html压缩，图片,svg压缩
+          代码分割，提取多个页面的公共模块，提取首屏不需要加载的异步加载
+          1.plugin
+          而插件则可以用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。
+          2.使用webpack构建本地服务器 webpack 只能理解 JavaScript 和 JSON 文件。
+          loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效
+          模块，以供应用程序使用，以及被添加到依赖图中 4.babel es7
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="首屏优化" name="102">
+        <div>
+          通过打包分析查看，查看打包后的资源 图片压缩， svg压缩
+          代码分割SplitChunks 路由懒加载 预加载 gzip传输
+        </div>
+      </el-collapse-item>
       <el-collapse-item title="前后端分离问题" name="1">
         <div>
           1、该网站前端变化远比后端变化频繁 <br />
@@ -103,6 +121,65 @@
           Gulp/Grunt 属于构建工具 立即调用函数表达式(IIFE)
         </p>
       </el-collapse-item>
+      <el-collapse-item title="hash 和 histroy" name="51">
+        <div>
+          hash 路由：监听 url 中 hash
+          的变化，然后渲染不同的内容，这种路由不向服务器发送请求，不需要服务端的支持；
+          当页面中的 hash
+          发生变化时，会触发hashchange事件，因此我们可以监听这个事件，来判断路由是否发生了变化。
+          history 路由：监听 url 中的路径变化，需要客户端和服务端共同的支持； 在
+          history 路由中，我们一定会使用window.history中的方法，常见的操作有：
+          在 history
+          路由中，我们一定会使用window.history中的方法，常见的操作有：
+          back()：后退到上一个路由； forward()：前进到下一个路由，如果有的话；
+          go(number)：进入到任意一个路由，正数为前进，负数为后退；
+          pushState(obj, title, url)：前进到指定的 URL，不刷新页面；
+          replaceState(obj, title, url)：用 url 替换当前的路由，不刷新页面；
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="es6常用语法" name="52">
+        var set1 = Array.from(new Set([1,1,2,2,33,'33',44,'44'])) var tt =
+        [...new Set([5,5,6,6,8,])] // 5，6，8
+        <div>
+          拓展运算符 const,let，数组操作，foreach,find,findIndex
+          <br />
+          <br />
+          改变原数组的 -7 shift,unshift,pop,push,reverse,sort,splice
+          <br />
+          <br />
+          不改变原数组的 -9
+          concat,slice,join,map,filter,forEach,some,every,reduce
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="socket长连接和ajax有啥区别" name="53">
+        <div>
+          Web Socket 连接不是基于 HTTP 传输的，它是一种 HTML 5 为 Web
+          定制的全双工通讯协议，没有“请求 -
+          响应”的概念，浏览器与服务器完全平等，连接一旦建立就一直开放，双方可随时向对方发送任意数据，没有推拉之分。
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="Promise回调" name="54">
+        <div>then(),catch(),finally()</div>
+      </el-collapse-item>
+      <el-collapse-item title="数据类型判断" name="55">
+        <div>
+          typeof可以测试出number、string、boolean、Symbol、undefined及function，
+          而对于null及数组、对象，typeof均检测出为object，不能进一步判断它们的类型。
+        </div>
+        instanceof 其实适合用于判断自定义的类实例对象,
+        而不是用来判断原生的数据类型
+      </el-collapse-item>
+      <el-collapse-item title="instinceof和typeof区别" name="56">
+        <div>
+          typeof是一个一元运算符，放在一个运算数之前，运算数可以使任意类型。
+          它返回值是一个字符串，说明运算数的类型。
+          typeof返回果:number，string，undefined，object，boolean，function，symbol（ES6新增）
+        </div>
+        instanceof instanceof 三、使用 Object.prototype.toString.call()判断
+        function _typeof(obj){ var s = Object.prototype.toString.call(obj);
+        return s.match(/\[object (.*?)\]/)[1].toLowerCase(); };
+        运算符用来测试一个对象在其原型链中是否存在一个构造函数的prototype属性。用于判断一个变量是否某个对象的实例。
+      </el-collapse-item>
       <el-collapse-item title="跨域" name="3">
         <div>
           现象一: No 'Access-Control-Allow-Origin' header is present on the
@@ -111,17 +188,21 @@
         解决方案: 后端允许options请求。
         <br />
         <p>
-          现象二：No 'Access-Control-Allow-Origin' header is present on the requested resource, 并且The response had HTTP status code 405
+          现象二：No 'Access-Control-Allow-Origin' header is present on the
+          requested resource, 并且The response had HTTP status code 405
           后端关闭对应的安全配置。
         </p>
-        <br>
-        现象三: No 'Access-Control-Allow-Origin' header is present on the requested resource,并且status 200
-        <p>
-        解决方案: 后端增加对应的头部支持。
-        </p>
-        <br>
-        现象四: heade contains multiple values '*,*'
-        解决方案（一一对应）: 建议删除代码中手动添加的*，只用项目配置中的即可；
+        <br />
+        现象三: No 'Access-Control-Allow-Origin' header is present on the
+        requested resource,并且status 200
+        <p>解决方案: 后端增加对应的头部支持。</p>
+        <br />
+        现象四: heade contains multiple values '*,*' 解决方案（一一对应）:
+        建议删除代码中手动添加的*，只用项目配置中的即可；
+      </el-collapse-item>
+      <el-collapse-item title="作用域插槽" name="25452">
+        有的时候你希望提供的组件带有一个可从子组件获取数据的可复用的插槽。
+        作用域插槽适合的场景是至少包含三级以上的组件层级，是一种优秀的组件化方案
       </el-collapse-item>
       <el-collapse-item title="src---herf" name="4">
         <div>
@@ -133,19 +214,46 @@
           单纯请求数据，created,需要页面元素加载完成，就mounted
           对于作为子组件被调用的组件里，异步请求应当在mounted里调用，因为这个时候子组件可能需要涉及到对dom的操作；
           对于页面级组件，当我们需要使用ssr（服务端渲染）的时候，只有created是可用的，所以这个时候请求数据只能用它；
-          对于页面级组件， 当我们做异步操作时，涉及到要访问dom的操作，我们仍旧只能使用mounted;
+          对于页面级组件，
+          当我们做异步操作时，涉及到要访问dom的操作，我们仍旧只能使用mounted;
           对于一般情况，created和mounted都是可以的；
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="7种数据类型" name="7">
+        <div>
+          undefined,null,布尔值Boolean,字符串String,数值Number，对象Object,Symbol
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="首页白屏问题" name="8">
+        <div>
+          优化 webpack 减少模块打包体积，code-split 按需加载
+          服务端渲染，在服务端事先拼装好首页所需的 html 首页加 loading 或 骨架屏
+          （仅仅是优化体验） 服务端开启gzip压缩 打包文件分包，提取公共文件包
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="节流防抖" name="8">
+        <div>
+          节流： 鼠标不断点击触发，mousedown(单位时间内只触发一次)
+          监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断 防抖：
+          校验唯一名称，input过程、change事件持续触发，指定时间内没有动作，那么我去请求。
+          window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次
         </div>
       </el-collapse-item>
     </el-collapse>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 .doc_block {
   padding: 20px;
   width: 60%;
   word-wrap: break-word;
   word-break: break-all;
-  background: #d9e2ea;
+  background: #eaf5ff;
+}
+.el-collapse-item,
+.el-collapse-item__header {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
 }
 </style>

@@ -108,3 +108,8 @@ $green: green;
 .cm_pad_20{
     padding: 20px;
 }
+.test{
+    .el-tabs__active-bar{
+        background-color: transparent;
+    }
+}

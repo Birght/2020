@@ -1,6 +1,11 @@
 <template>
   <div>
-12412
+      <el-row>
+        <el-col :span="6"></el-col>
+        <el-col :span="6"></el-col>
+        <el-col :span="6"></el-col>
+        <el-col :span="6"></el-col>
+      </el-row>
   </div>
 </template>
 <script>

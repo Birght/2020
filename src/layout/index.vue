@@ -8,8 +8,8 @@
           </el-row>
         </el-header>
         <el-container>
-          <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-            <menuAside></menuAside>
+          <el-aside :class="menuMark?'layout_left_hide':'layout_left'">
+            <menuAside @getChildValue = "getChildValue"></menuAside>
           </el-aside>
           <el-main>
             <appMain></appMain>
@@ -19,11 +19,20 @@
   </div>
 </template>
 <script>
-import menuAside from '@/layout/menuSlider'
+import menuAside from '@/layout/menuSlider/silderMenu'
 import appMain from '@/layout/appMain'
-
 export default {
   name: 'layout',
-  components: {menuAside, appMain}
+  data () {
+    return {
+      menuMark: false
+    }
+  },
+  components: {menuAside, appMain},
+  methods: {
+    getChildValue (cur) {
+      this.menuMark = cur.value
+    }
+  }
 }
 </script>

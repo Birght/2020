@@ -108,6 +108,27 @@ $green: green;
 .cm_pad_20{
     padding: 20px;
 }
+.layout_left{
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    height: auto;
+    flex-grow: 0;
+    .changeMark{
+        left: 23px;
+    }
+}
+.layout_left_hide{
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    height: auto;
+    flex-grow: 0;
+    .changeMark{
+        left: 10px;
+    }
+}
+
 .test{
     .el-tabs__active-bar{
         background-color: transparent;

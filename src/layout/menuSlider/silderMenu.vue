@@ -1,42 +1,67 @@
 <template>
-    <el-scrollbar class="sidebar_container">
-        <div class="siderbar_icon_block changemark" @click="change">
-            <i class="el-icon-s-fold" v-if="isCollapse"></i>
-            <i class="el-icon-s-unfold" v-else></i>
+  <el-scrollbar class="sidebar_container">
+    <div
+      class="siderbar_icon_block changemark"
+      @click="change"
+    >
+      <i
+        class="el-icon-s-fold"
+        v-if="isCollapse"
+      />
+      <i
+        class="el-icon-s-unfold"
+        v-else
+      />
+    </div>
+    <el-menu
+      background-color="#337ab7"
+      :collapse="isCollapse"
+      text-color="#fff"
+      active-text-color="#fff"
+      :router="true"
+    >
+      <div
+        v-for="(subMenu, subMenuIndex) in menuData"
+        :key="subMenu.name+subMenuIndex"
+      >
+        <div v-if="subMenu.isShow">
+          <el-submenu
+            :index="subMenu.name+subMenuIndex"
+            v-if="subMenu.hasOwnProperty('children')&&subMenu.children.length>0"
+          >
+            <span slot="title">
+              <i :class="subMenu.meta.icon" />
+              <span>{{ subMenu.meta.title }}</span>
+            </span>
+            <el-menu-item-group>
+              <el-menu-item
+                :index="childMenu.path"
+                v-for="(childMenu, childMenuIndex) in subMenu.children"
+                :key="childMenu+childMenuIndex"
+                @click="goto(subMenu,childMenu)"
+              >
+                <span slot="title">{{ childMenu.meta.title }}</span>
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-menu-item
+            :index="subMenu.path"
+            v-else
+            @click="goto(subMenu)"
+          >
+            <i :class="subMenu.meta.icon" />
+            <span slot="title">
+              <span>{{ subMenu.meta.title }}</span>
+            </span>
+          </el-menu-item>
         </div>
-        <el-menu
-            background-color="#337ab7"
-            :collapse="isCollapse"
-            text-color="#fff"
-            active-text-color="#fff"
-            :router="true">
-            <div v-for="(subMenu, subMenuIndex) in menuData" :key="subMenu.name+subMenuIndex">
-                <div v-if="subMenu.isShow">
-                    <el-submenu :index="subMenu.name+subMenuIndex" v-if="subMenu.hasOwnProperty('children')&&subMenu.children.length>0">
-                        <span slot="title">
-                            <i :class="subMenu.meta.icon"></i>
-                            <span>{{subMenu.meta.title}}</span>
-                        </span>
-                        <el-menu-item-group>
-                            <el-menu-item :index="childMenu.path" v-for="(childMenu, childMenuIndex) in subMenu.children" :key="childMenu+childMenuIndex" @click="goto(subMenu,childMenu)">
-                                <span slot="title">{{childMenu.meta.title}}</span>
-                            </el-menu-item>
-                        </el-menu-item-group>
-                    </el-submenu>
-                    <el-menu-item :index="subMenu.path" v-else @click="goto(subMenu)">
-                        <i :class="subMenu.meta.icon"></i>
-                        <span slot="title">
-                            <span>{{subMenu.meta.title}}</span>
-                        </span>
-                    </el-menu-item>
-                </div>
-            </div>
-        </el-menu>
-    </el-scrollbar>
+      </div>
+    </el-menu>
+  </el-scrollbar>
 </template>
 <script>
 export default {
-  name: 'sildermenu',
+  name: 'Sildermenu',
   data () {
     return {
       // router 数据，配合权限处理，登录获取当前登录人角色权限
@@ -84,6 +109,15 @@ export default {
               isShow: true,
               meta: {
                 title: 'IE8兼容',
+                icon: 'el-icon-help'
+              }
+            },
+            {
+              path: '/mv',
+              name: 'mv',
+              isShow: true,
+              meta: {
+                title: '视频播放',
                 icon: 'el-icon-help'
               }
             }

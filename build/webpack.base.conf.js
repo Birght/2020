@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        exclude: resolve('src/assets/icons'),
+        exclude: resolve('src/assets/icons/svg'),
         use: [
           {
             loader: 'url-loader',
@@ -52,18 +52,12 @@ module.exports = {
               limit: 10000,
               name: utils.assetsPath('img/[name].[hash:7].[ext]')
             }
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true
-            }
           }
         ]
       },
       {
         test: /\.svg$/,
-        include: resolve('src/assets/icons'),
+        include: resolve('src/assets/icons/svg'),
         use: [
           {
             loader: 'svg-sprite-loader',

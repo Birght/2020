@@ -49,6 +49,15 @@ export default [
           icon: 'el-icon-help'
         },
         component: () => import('@/views/sections/ie8.vue')
+      },
+      {
+        path: '/mv',
+        name: 'mv',
+        meta: {
+          title: '视频播放',
+          icon: 'el-icon-help'
+        },
+        component: () => import('@/views/sections/mv.vue')
       }
     ]
   }

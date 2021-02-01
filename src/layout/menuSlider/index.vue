@@ -6,22 +6,34 @@
     :collapse="isCollapse"
     :class="{ myMenu: isActive }"
   >
-    <el-scrollbar wrap-class="scrollbar-wrapper" style="height: 100%">
+    <el-scrollbar
+      wrap-class="scrollbar-wrapper"
+      style="height: 100%"
+    >
       <el-menu-item index="/home">
-        <i class="el-icon-s-data"></i>主页
+        <i class="el-icon-s-data" />主页
       </el-menu-item>
-      <div v-for="(item, index) in curRoutes" :key="index">
+      <div
+        v-for="(item, index) in curRoutes"
+        :key="index"
+      >
         <el-submenu
           index="2"
           v-if="item.hasOwnProperty('children') && item.children.length > 0"
         >
           <template slot="title">
-            <i class="el-icon-s-data"></i>
+            <i class="el-icon-s-data" />
             <span>综合</span>
           </template>
-          <el-menu-item index="/doc">文档</el-menu-item>
-          <el-menu-item index="/unit">组件</el-menu-item>
-          <el-menu-item index="/unit">样式</el-menu-item>
+          <el-menu-item index="/doc">
+            文档
+          </el-menu-item>
+          <el-menu-item index="/unit">
+            组件
+          </el-menu-item>
+          <el-menu-item index="/unit">
+            样式
+          </el-menu-item>
         </el-submenu>
       </div>
     </el-scrollbar>
@@ -30,7 +42,7 @@
 <script>
 import { constRoutes } from '@/router'
 export default {
-  name: 'menuAside',
+  name: 'MenuAside',
   data () {
     return {
       isCollapse: false,

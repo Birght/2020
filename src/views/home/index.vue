@@ -1,37 +1,39 @@
 <template>
   <div>
     <h2>
-    思想先行，代码后动
+      思想先行，代码后动
     </h2>
-    <el-tabs v-model="activeName" @tab-click="handleClick" class="test">
-      <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
-      <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-      <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-      <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+    <el-tabs
+      v-model="activeName"
+      @tab-click="handleClick"
+      class="test"
+    >
+      <el-tab-pane
+        label="工具统一"
+        name="first"
+      >
+        编辑器使用，vscode。
+        setting.json 配置
+      </el-tab-pane>
+      <el-tab-pane
+        label="组件统一"
+        name="second"
+      >
+        组件demo示例
+      </el-tab-pane>
+      <el-tab-pane
+        label="CSS统一"
+        name="third"
+      >
+        cssdemo示例，以及规则定义
+      </el-tab-pane>
+      <el-tab-pane
+        label="js公共提取"
+        name="fourth"
+      >
+        公共Js方法
+      </el-tab-pane>
     </el-tabs>
-
-    <table>
-      <thead>
-        <tr>
-          <th>
-            AAA
-          </th>
-          <th>
-            BBB
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>1</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 <script>

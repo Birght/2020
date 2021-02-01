@@ -40,6 +40,15 @@ export default [
           icon: 'el-icon-s-data'
         },
         component: () => import('@/views/demo/svgdemo.vue')
+      },
+      {
+        path: '/ie8',
+        name: 'ie8',
+        meta: {
+          title: 'ie8兼容',
+          icon: 'el-icon-help'
+        },
+        component: () => import('@/views/sections/ie8.vue')
       }
     ]
   }

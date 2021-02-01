@@ -77,6 +77,15 @@ export default {
                 title: '统计',
                 icon: 'el-icon-s-data'
               }
+            },
+            {
+              path: '/ie8',
+              name: 'ie8',
+              isShow: true,
+              meta: {
+                title: 'IE8兼容',
+                icon: 'el-icon-help'
+              }
             }
           ]
         }

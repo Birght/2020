@@ -3,10 +3,6 @@ export default [
   {
     path: '/',
     redirect: '/home',
-    meta: {
-      title: '首页',
-      icon: 'el-icon-s-platform'
-    },
     component: Layout
   },
   {

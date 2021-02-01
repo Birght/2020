@@ -42,6 +42,15 @@ export default {
       // router 数据，配合权限处理，登录获取当前登录人角色权限
       menuData: [
         {
+          name: 'home',
+          route: '/home',
+          isShow: true,
+          meta: {
+            title: '首页',
+            icon: 'el-icon-s-platform'
+          }
+        },
+        {
           path: '/static',
           name: 'static',
           redirect: '/doc',
@@ -51,15 +60,6 @@ export default {
             icon: 'el-icon-s-platform'
           },
           children: [
-            {
-              path: '/home',
-              name: 'home',
-              isShow: true,
-              meta: {
-                title: '主页',
-                icon: 'el-icon-menu'
-              }
-            },
             {
               path: '/doc',
               name: 'doc',

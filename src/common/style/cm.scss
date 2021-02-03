@@ -128,9 +128,9 @@ $green: green;
         left: 10px;
     }
 }
-
-.test{
-    .el-tabs__active-bar{
-        background-color: transparent;
-    }
+.vjs-custom-skin>.video-js .vjs-big-play-button {
+    top: 50%;
+    left: 50%;
+    margin-left: -1.5em;
+    margin-top: -1em;
 }

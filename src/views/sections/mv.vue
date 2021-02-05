@@ -1,9 +1,5 @@
 <template>
   <div class="test">
-    <img
-      src="./111.png"
-      alt="111.png"
-    >
     <video-player
       class="video-player vjs-custom-skin"
       ref="videoPlayer"

@@ -1,43 +1,47 @@
 <template>
-  <el-menu
-    @select="handleSelect"
-    active-text-color="#ffd04b"
-    default-active="/home"
-    :collapse="isCollapse"
-    :class="{ myMenu: isActive }"
-  >
+  <div>
     <el-scrollbar
       wrap-class="scrollbar-wrapper"
-      style="height: 100%"
     >
-      <el-menu-item index="/home">
-        <i class="el-icon-s-data" />主页
-      </el-menu-item>
-      <div
-        v-for="(item, index) in curRoutes"
-        :key="index"
+      <el-menu
+        @select="handleSelect"
+        active-text-color="#ffd04b"
+        default-active="/home"
+        :collapse="isCollapse"
+        :unique-opened="false"
+        :collapse-transition="false"
+        mode="vertical"
+        :class="{ myMenu: isActive }"
       >
-        <el-submenu
-          index="2"
-          v-if="item.hasOwnProperty('children') && item.children.length > 0"
+        <el-menu-item index="/home">
+          <i class="el-icon-s-data" />主页
+        </el-menu-item>
+        <div
+          v-for="(item, index) in curRoutes"
+          :key="index"
         >
-          <template slot="title">
-            <i class="el-icon-s-data" />
-            <span>综合</span>
-          </template>
-          <el-menu-item index="/doc">
-            文档
-          </el-menu-item>
-          <el-menu-item index="/unit">
-            组件
-          </el-menu-item>
-          <el-menu-item index="/unit">
-            样式
-          </el-menu-item>
-        </el-submenu>
-      </div>
+          <el-submenu
+            index="2"
+            v-if="item.hasOwnProperty('children') && item.children.length > 0"
+          >
+            <template slot="title">
+              <i class="el-icon-s-data" />
+              <span>综合</span>
+            </template>
+            <el-menu-item index="/doc">
+              文档
+            </el-menu-item>
+            <el-menu-item index="/unit">
+              组件
+            </el-menu-item>
+            <el-menu-item index="/unit">
+              样式
+            </el-menu-item>
+          </el-submenu>
+        </div>
+      </el-menu>
     </el-scrollbar>
-  </el-menu>
+  </div>
 </template>
 <script>
 import { constRoutes } from '@/router'

@@ -14,7 +14,7 @@
       />
     </div>
     <el-menu
-      background-color="#337ab7"
+      background-color="#324157"
       :collapse="isCollapse"
       text-color="#fff"
       active-text-color="#fff"
@@ -22,12 +22,14 @@
     >
       <div
         v-for="(subMenu, subMenuIndex) in menuData"
-        :key="subMenu.name+subMenuIndex"
+        :key="subMenu.name + subMenuIndex"
       >
         <div v-if="subMenu.isShow">
           <el-submenu
-            :index="subMenu.name+subMenuIndex"
-            v-if="subMenu.hasOwnProperty('children')&&subMenu.children.length>0"
+            :index="subMenu.name + subMenuIndex"
+            v-if="
+              subMenu.hasOwnProperty('children') && subMenu.children.length > 0
+            "
           >
             <span slot="title">
               <i :class="subMenu.meta.icon" />
@@ -37,8 +39,8 @@
               <el-menu-item
                 :index="childMenu.path"
                 v-for="(childMenu, childMenuIndex) in subMenu.children"
-                :key="childMenu+childMenuIndex"
-                @click="goto(subMenu,childMenu)"
+                :key="childMenu + childMenuIndex"
+                @click="goto(subMenu, childMenu)"
               >
                 <span slot="title">{{ childMenu.meta.title }}</span>
               </el-menu-item>
@@ -150,26 +152,26 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    .sidebar_container /deep/ {
-        position: relative;
-        height: 100%;
-        background: #337ab7;
-        .el-scrollbar__wrap {
-            height: 100vh;
-            overflow-x: hidden !important;
-        }
-        li i{
-            color: #fff;
-        }
-        .el-menu-item-group__title{
-            padding: 0;
-        }
-    }
-    .siderbar_icon_block{
-        text-indent: 12px;
-        height: 50px;
-        line-height: 50px;
-        color: #fff;
-        cursor: pointer;
-    }
+.sidebar_container /deep/ {
+  position: relative;
+  height: 100%;
+  background: #324157;
+  .el-scrollbar__wrap {
+    height: 100vh;
+    overflow-x: hidden !important;
+  }
+  li i {
+    color: #fff;
+  }
+  .el-menu-item-group__title {
+    padding: 0;
+  }
+}
+.siderbar_icon_block {
+  text-indent: 12px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  cursor: pointer;
+}
 </style>

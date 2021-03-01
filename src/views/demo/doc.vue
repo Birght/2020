@@ -346,10 +346,51 @@
         name="8"
       >
         <div>
-          节流： 鼠标不断点击触发，mousedown(单位时间内只触发一次)
-          监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断 防抖：
+          节流：
+          鼠标不断点击触发，mousedown(单位时间内只触发一次)
+          监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断
+          防抖：
           校验唯一名称，input过程、change事件持续触发，指定时间内没有动作，那么我去请求。
           window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次
+        </div>
+      </el-collapse-item>
+      <el-collapse-item
+        title="强制缓存、协商缓存"
+        name="022801"
+      >
+        <div>
+          强制缓存就是向浏览器缓存查找该请求结果，并根据该结果的缓存规则来决定是否使用该缓存结果的过程
+          <br>
+          协商缓存就是强制缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程，
+        </div>
+      </el-collapse-item>
+      <el-collapse-item
+        title="标准模型与IE模型"
+        name="022802"
+      >
+        <div>
+          宽高的计算方式不同，IE模型是,Content + padding + border <br>
+          标准则是content 正常设置的宽度<br>
+          <b>
+            // 设置标准模型  <br>
+            box-sizing:content-box;
+          </b><br>
+          <b>
+            // 设置IE模型<br>
+            box-sizing:border-box;
+          </b>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item
+        title="XSS"
+        name="022803"
+      >
+        <div>
+          xss脚本语言注入<br>
+          CSRF:
+          要完成一次CSRF攻击，受害者必须依次完成两个步骤：
+          登录受信任网站A，并在本地生成Cookie。
+          在不登出A的情况下，访问危险网站B。
         </div>
       </el-collapse-item>
     </el-collapse>
